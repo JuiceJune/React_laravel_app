@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import 'react-tooltip/dist/react-tooltip.css';
+
+* {
+    box-sizing: border-box;
+}
+html, body, #root, #defaultLayout, #guestLayout {
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #212121;
+    background-color: #f6f6f6;
+}
+
+input {
+    outline: 0;
+    background: #ffffff;
+    width: 100%;
+    border: 2px solid #e6e6e6;
+    border-radius: 10px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+input:focus {
+    border-color: #5b08a7;
+}
+
+/*Buttons*/
+.btn,
+.btn-add,
+.btn-edit{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #5b08a7;
+    border: 0;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 12px;
+    color: #FFFFFF;
+    font-size: 16px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-add,
+.btn-edit{
+    padding: 0.5rem 0.75rem;
+    font-size: 14px;
+    border-radius: 4px;
+}
+.btn-add {
+    background-color: #00a762;
+}
+.btn-delete {
+    border: none;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    padding: 10px 5px;
+}
+
+.btn-logout {
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    color: #212121;
+    transition: all 0.3s;
+    border-radius: 6px;
+    margin-left: 15px;
+}
+.btn-logout:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    background: #5b08a7;
+}
+
+.removeBtn {
+    background-color: #b72424;
+    margin-top: 15px;
+}
+
+.removeBtn:hover,
+.removeBtn:active,
+.removeBtn:focus {
+    background-color: #e12222;
+}
+/*Buttons*/
+
+.text-center {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table > thead > tr > th {
+    text-align: left;
+    padding: 0.5rem 0.5rem;
+    background-color: #efefef;
+}
+
+table > tbody > tr > td {
+    padding: 0.5rem 0.5rem;
+    border-bottom: 1px solid #efefef;
+    white-space: nowrap;
+}
+
+.card {
+    background-color: #FFF;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+.alert {
+    padding: 1rem;
+    background-color: #ff4040;
+    color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.notification {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 100;
+    padding: 1rem 1.5rem;
+    background-color: #00a762;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+/* Login/Signup forms*/
+
+.login-signup-form {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-signup-form .form {
+    width: 360px;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    padding: 34px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-signup-form .title {
+    font-size: 20px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.login-signup-form .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 16px;
+    text-align: center;
+}
+
+.login-signup-form .form .message a {
+    color: #5b08a7;
+    text-decoration: none;
+}
+
+/* Login/Signup form */
+
+
+#defaultLayout {
+    display: flex;
+}
+
+#defaultLayout aside {
+    width: 240px;
+    background-color: #5b08a7;
+    padding: 1rem
+}
+
+#defaultLayout aside > a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+#defaultLayout aside > a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#defaultLayout .content {
+    flex: 1;
+}
+
+#defaultLayout header {
+    height: 80px;
+    padding: 2rem 3rem;
+    background-color: white;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#defaultLayout main {
+    padding: 2rem;
+}
+
+.animated {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+/*Pagination*/
+.pagination-link {
+    text-decoration: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.pagination .page-number {
+    font-size: 16px;
+    font-weight: 600;
+    color: #5b08a7;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.pagination .page-number:hover {
+    color: #fff;
+    background: #e0e0e0;
+}
+
+.pagination .active {
+    color: #fff;
+    background: #d0d0d0;
+}
+
+.pagination .active:hover {
+    color: #5b08a7;
+    background: #fff;
+}
+/*Pagination*/
+
+/*Popup*/
+.popup {
+    z-index: 1000000;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.popup.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popupContent {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    transform: scale(0.5);
+    transition: 0.4s all;
+    width: 50vw;
+}
+
+.popupContent.active {
+    transform: scale(1);
+}
+
+.popupForm {
+    padding: 20px;
+}
+
+.closePopupDiv {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.closePopupElement {
+    cursor: pointer;
+}
+
+.popupBtnBlock {
+    display: flex;
+    justify-content: space-between;
+}
+/*Popup*/
+
+/*Pickers*/
+.colorPicker {
+    border: 2px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.dateTimePickerBlock{
+    border: 2px solid #e6e6e6;
+    border-radius: 12px;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dateTimePicker {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.rdtPicker {
+    position: relative !important;
+}
+/*Pickers*/
+
+/*Calendar*/
+.fc .fc-prev-button, .fc-next-button  {
+    background-color: transparent !important;
+    border-color: transparent !important;;
+    color: #5b08a7 !important;;
+}
+.fc .fc-prev-button:hover,
+.fc .fc-next-button:hover {
+    background-color: #d5d5d5 !important;
+    border-color: transparent !important;;
+}
+.fc .fc-today-button {
+    background-color: transparent !important;
+    border: 2px solid #777777 !important;
+    border-radius: 12px !important;
+    color: black !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.fc .fc-today-button:hover {
+    background-color: #d3d3d3 !important;
+}
+.fc .fc-today-button:disabled {
+    opacity: 0.70 !important;
+}
+.fc .fc-today-button:disabled:hover {
+    background-color: transparent !important;
+}
+.fc-listMonth-button,
+.fc-listWeek-button,
+.fc-listDay-button,
+.fc-listYear-button,
+.fc-dayGridMonth-button,
+.fc-timeGridWeek-button,
+.fc-timeGridDay-button {
+    background-color: #dcdcdc !important;
+    color: black !important;
+    border-radius: 10px !important;
+    border-color: white !important;
+}
+.fc-listMonth-button:hover,
+.fc-listWeek-button:hover,
+.fc-listDay-button:hover,
+.fc-listYear-button:hover,
+.fc-dayGridMonth-button:hover,
+.fc-timeGridWeek-button:hover,
+.fc-timeGridDay-button:hover {
+    background-color: #d3d3d3 !important;
+}
+.fc-button-group {
+    gap: 5px !important;
+    flex-wrap: wrap;
+}
+.fc-header-toolbar {
+    gap: 10px;
+}
+.fc-button-active {
+    background-color: #b2b2b2 !important;
+}
+.fc-dayHeader-format {
+    background-color: #f6f6f6 !important;
+    border-bottom: none !important;
+    font-weight: normal;
+    color: #818181;
+    padding-top: 5px !important;
+}
+.fc-daygrid-day-top {
+    justify-content: center;
+    font-weight: bold !important;
+    color: #3b3b3b;
+    padding-top: 8px !important;
+}
+.fc-daygrid-day-number {
+    border: 1px solid #eeeeee;
+    border-radius: 100%;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
+    background-color: #eaeaea;
+    text-decoration: none !important;
+}
+.fc-daygrid-day-number:hover {
+    background-color: #d7d7d7;
+}
+.fc-daygrid-day-events {
+    /*padding: 3px !important;*/
+}
+.fc-daygrid-dot-event {
+    padding: 3px !important;
+    margin-bottom: 1px;
+}
+.fc-daygrid-block-event {
+    padding: 4px 10px !important;
+    border-radius: 10px !important;
+}
+.fc .fc-list-event {
+    background-color: #ffffff !important;
+    cursor: pointer;
+}
+.popover {
+    z-index: 10000;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #c0c0c0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /*transition: 0.4s;*/
+}
+.popover-header {
+    padding: 10px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    color: white;
+}
+.popover-body {
+    padding: 8px 10px 15px 10px;
+}
+.popover-time {
+    padding: 5px 10px;
+    background-color: aliceblue;
+    border-bottom: 1px solid #c4c4c4;
+}
+.popover-body-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.popover-close {
+    background-color: white;
+    border-radius: 12px;
+}
+.popover-btn {
+    border-radius: 10px;
+    padding: 3px 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: white;
+}
+.popover-edit-btn {
+    background-color: #7b5def;
+}
+.popover-edit-btn:hover {
+    background-color: #937bea;
+}
+.popover-delete-btn {
+    background-color: #ef5d62;
+}
+.popover-delete-btn:hover {
+    background-color: #ec7a7e;
+}
+/*Calendar*/
+
