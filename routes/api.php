@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->group(function() {
     });
     Route::post('/logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
     Route::apiResource('users', \App\Http\Controllers\Api\UserController::class);
+
+    Route::apiResource('events', \App\Http\Controllers\Api\EventController::class);
 });
 
 Route::post('/signup', [\App\Http\Controllers\Api\AuthController::class, 'signup']);
