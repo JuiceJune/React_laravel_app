@@ -16,3 +16,8 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/react/node_modules
+/react/dist
+/react/.env
+/react/.env.production
+/react/package-lock.json
